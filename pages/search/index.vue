@@ -32,7 +32,11 @@
             :items="data"
             :items-per-page="5"
             class="elevation-1"
-          ></v-data-table>
+          >
+            <template v-slot:[`item.url`]="{ item }">
+              <a :href="item.url" target="_blank">{{ item.url }}</a>
+            </template>
+          </v-data-table>
         </v-card-text>
       </v-card>
       <v-snackbar
